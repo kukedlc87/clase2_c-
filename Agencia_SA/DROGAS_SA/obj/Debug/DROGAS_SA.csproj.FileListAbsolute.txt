@@ -1,0 +1,12 @@
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\bin\Debug\DROGAS_SA.exe.config
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\bin\Debug\DROGAS_SA.exe
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\bin\Debug\DROGAS_SA.pdb
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.csproj.AssemblyReference.cache
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.csproj.SuggestedBindingRedirects.cache
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.frmPrincipal.resources
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.frmVenta.resources
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.Properties.Resources.resources
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.csproj.GenerateResource.cache
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.csproj.CoreCompileInputs.cache
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.exe
+C:\Users\kuked\source\repos\DROGAS_SA\DROGAS_SA\obj\Debug\DROGAS_SA.pdb
