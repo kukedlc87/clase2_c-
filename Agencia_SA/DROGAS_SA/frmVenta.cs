@@ -89,10 +89,6 @@ namespace DROGAS_SA
             Detalle det = new Detalle(articulo, cantidad);
             nueva.AgregarDetalle(det);
            
-
-
-            
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -103,7 +99,6 @@ namespace DROGAS_SA
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             int id_cliente = (int)cboCliente.SelectedValue;
-            MessageBox.Show($"{id_cliente}");
             Clientes cliente = new Clientes();
             cliente.Id_cliente = id_cliente;
             nueva.Cliente = cliente;
