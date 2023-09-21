@@ -46,13 +46,19 @@ namespace DROGAS_SA
 
         public bool Facturar(Factura factura)
         {
-            int nro_factura = factura.Cliente.Id_cliente;
-
-            
-
-
-
-
+           
+            Conectar();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "nueva";
+            SqlParameter p = new SqlParameter();
+            p.ParameterName = "cod_cliente";
+            p.SqlDbType = SqlDbType.Int;
+            p.Value = factura.Cliente.Id_cliente;
+            p.Direction = ParameterDirection.Input;
+            cmd.Parameters.Add(p);
+            cmd.ExecuteNonQuery();
+            Desconectar();
+           
             return true;
         }
     }

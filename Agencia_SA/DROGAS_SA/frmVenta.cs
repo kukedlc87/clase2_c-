@@ -57,10 +57,11 @@ namespace DROGAS_SA
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
-        {
+        {   //casteo de todo lo que esta en el combo
             DataRowView item = (DataRowView)cboArticulo.SelectedItem;
-            Articulo articulo = new Articulo();
 
+            Articulo articulo = new Articulo();
+            //lectura de los datos del combo, 
             articulo.Id_articulo = Convert.ToInt32(item.Row.ItemArray[0]);
             articulo.Descripcion = item.Row.ItemArray[1].ToString();
             articulo.Pre_unitario = Convert.ToInt32(item.Row.ItemArray[2]);
@@ -74,7 +75,8 @@ namespace DROGAS_SA
             //MessageBox.Show($"{articulo.Pre_unitario}");
 
 
-            dgVenta.Rows.Add(new object[] { articulo.Descripcion, articulo.Pre_unitario, cantidad, subtotal , "Quitar"  });
+            dgVenta.Rows.Add(new object[] { articulo.Descripcion,
+                articulo.Pre_unitario, cantidad, subtotal , "Quitar"  });
             total = 0;
             foreach (DataGridViewRow row in dgVenta.Rows)
             {
@@ -86,12 +88,10 @@ namespace DROGAS_SA
 
             Detalle det = new Detalle(articulo, cantidad);
             nueva.AgregarDetalle(det);
-            nueva.Cliente.Id_cliente = (int)cboCliente.SelectedValue;
+           
+
+
             
-
-
-            //total = total + subtotal;
-            //lbTotal.Text = (total).ToString();
 
         }
 
@@ -102,6 +102,12 @@ namespace DROGAS_SA
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            int id_cliente = (int)cboCliente.SelectedValue;
+            MessageBox.Show($"{id_cliente}");
+            Clientes cliente = new Clientes();
+            cliente.Id_cliente = id_cliente;
+            nueva.Cliente = cliente;
+            helper.Facturar(nueva);
 
         }
 
