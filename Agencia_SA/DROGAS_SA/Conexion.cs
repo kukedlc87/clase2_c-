@@ -12,12 +12,14 @@ namespace DROGAS_SA
     {
         private SqlConnection cnn = new SqlConnection("Data Source=kuke;Initial Catalog=Drogas_SA;Integrated Security=True");
         private SqlCommand cmd;
+        private bool resultado;
 
         public void Conectar()
         {
             cnn.Open();
             cmd = new SqlCommand();
             cmd.Connection = cnn;
+            resultado = false;
         }
 
         public void Desconectar() { cnn.Close(); }
@@ -41,5 +43,17 @@ namespace DROGAS_SA
 
         }
 
+
+        public bool Facturar(Factura factura)
+        {
+            int nro_factura = factura.Cliente.Id_cliente;
+
+            
+
+
+
+
+            return true;
+        }
     }
 }

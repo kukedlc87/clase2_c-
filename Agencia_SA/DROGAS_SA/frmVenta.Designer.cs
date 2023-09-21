@@ -31,6 +31,11 @@
             this.cboCliente = new System.Windows.Forms.ComboBox();
             this.cboArticulo = new System.Windows.Forms.ComboBox();
             this.dgVenta = new System.Windows.Forms.DataGridView();
+            this.ColArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrecio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColQuitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -65,12 +70,53 @@
             // dgVenta
             // 
             this.dgVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColArticulo,
+            this.ColPrecio_unitario,
+            this.ColCantidad,
+            this.ColSubtotal,
+            this.ColQuitar});
             this.dgVenta.Location = new System.Drawing.Point(9, 151);
             this.dgVenta.Name = "dgVenta";
             this.dgVenta.RowHeadersWidth = 62;
             this.dgVenta.RowTemplate.Height = 28;
             this.dgVenta.Size = new System.Drawing.Size(873, 304);
             this.dgVenta.TabIndex = 2;
+            // 
+            // ColArticulo
+            // 
+            this.ColArticulo.HeaderText = "Articulo";
+            this.ColArticulo.MinimumWidth = 8;
+            this.ColArticulo.Name = "ColArticulo";
+            this.ColArticulo.Width = 150;
+            // 
+            // ColPrecio_unitario
+            // 
+            this.ColPrecio_unitario.HeaderText = "Precio_unitario";
+            this.ColPrecio_unitario.MinimumWidth = 8;
+            this.ColPrecio_unitario.Name = "ColPrecio_unitario";
+            this.ColPrecio_unitario.Width = 150;
+            // 
+            // ColCantidad
+            // 
+            this.ColCantidad.HeaderText = "Cantidad";
+            this.ColCantidad.MinimumWidth = 8;
+            this.ColCantidad.Name = "ColCantidad";
+            this.ColCantidad.Width = 150;
+            // 
+            // ColSubtotal
+            // 
+            this.ColSubtotal.HeaderText = "Subtotal";
+            this.ColSubtotal.MinimumWidth = 8;
+            this.ColSubtotal.Name = "ColSubtotal";
+            this.ColSubtotal.Width = 150;
+            // 
+            // ColQuitar
+            // 
+            this.ColQuitar.HeaderText = "Quitar";
+            this.ColQuitar.MinimumWidth = 8;
+            this.ColQuitar.Name = "ColQuitar";
+            this.ColQuitar.Width = 150;
             // 
             // btnConfirmar
             // 
@@ -80,6 +126,7 @@
             this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnSalir
             // 
@@ -89,6 +136,7 @@
             this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnCancelar
             // 
@@ -147,6 +195,7 @@
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // numericUpDown1
             // 
@@ -210,5 +259,10 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecio_unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColSubtotal;
+        private System.Windows.Forms.DataGridViewButtonColumn ColQuitar;
     }
 }

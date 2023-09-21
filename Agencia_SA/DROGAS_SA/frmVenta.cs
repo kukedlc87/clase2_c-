@@ -13,6 +13,9 @@ namespace DROGAS_SA
     public partial class frmVenta : Form
     {
         Conexion helper = new Conexion();
+        private Factura nueva;
+
+        private int total;
         public frmVenta()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace DROGAS_SA
         {
             CargarCombo1();
             CargarCombo2();
+            nueva = new Factura();
         }
 
         private void CargarCombo2()
@@ -51,5 +55,60 @@ namespace DROGAS_SA
             cboCliente.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            DataRowView item = (DataRowView)cboArticulo.SelectedItem;
+            Articulo articulo = new Articulo();
+
+            articulo.Id_articulo = Convert.ToInt32(item.Row.ItemArray[0]);
+            articulo.Descripcion = item.Row.ItemArray[1].ToString();
+            articulo.Pre_unitario = Convert.ToInt32(item.Row.ItemArray[2]);
+            int cantidad = Convert.ToInt32(numericUpDown1.Value);
+
+            int subtotal = articulo.Pre_unitario * cantidad;
+
+
+            //MessageBox.Show($"{articulo.Id_articulo}");
+            //MessageBox.Show($"{articulo.Descripcion}");
+            //MessageBox.Show($"{articulo.Pre_unitario}");
+
+
+            dgVenta.Rows.Add(new object[] { articulo.Descripcion, articulo.Pre_unitario, cantidad, subtotal , "Quitar"  });
+            total = 0;
+            foreach (DataGridViewRow row in dgVenta.Rows)
+            {
+                total += Convert.ToInt32(row.Cells[3].Value); 
+            
+            }
+
+            lbTotal.Text = "TOTAL: " + (total).ToString();
+
+            Detalle det = new Detalle(articulo, cantidad);
+            nueva.AgregarDetalle(det);
+            nueva.Cliente.Id_cliente = (int)cboCliente.SelectedValue;
+            
+
+
+            //total = total + subtotal;
+            //lbTotal.Text = (total).ToString();
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void btnConfirmar_Click(object sender, EventArgs e)
+        //{
+        //    helper.facturar(nueva);
+        //    MessageBox.Show("Transacción exitosa");
+        //}
     }
 }

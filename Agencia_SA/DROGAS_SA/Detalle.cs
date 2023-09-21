@@ -21,12 +21,10 @@ namespace DROGAS_SA
             pre_unitario = 0;
         }
 
-        public Detalle(int detalle, Articulo articulo, int cantidad, int pre_unitario)
+        public Detalle(Articulo articulo, int cantidad)
         {
-            this.Id_detalle = detalle;
             this.Articulo = articulo;
             this.Cantidad = cantidad;
-            this.Pre_unitario = pre_unitario;
         }
 
         public int Id_detalle { get => id_detalle; set => id_detalle = value; }
